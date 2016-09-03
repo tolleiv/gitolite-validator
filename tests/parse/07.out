@@ -1,0 +1,38 @@
+root:
+  repo:
+    paths:
+      foo
+      baz
+    rules:
+      rule:
+        permission: RW+
+        members:
+          alice
+          @teamleads
+      rule:
+        permission: -
+        refex: master
+        members:
+          dilbert
+          @devteam
+      rule:
+        permission: -
+        refex: refs/tags/v[0-9]
+        members:
+          dilbert
+          @devteam
+      rule:
+        permission: RW+D
+        refex: dev/
+        members:
+          dilbert
+          @devteam
+      rule:
+        permission: RW
+        members:
+          dilbert
+          @devteam
+      rule:
+        permission: R
+        members:
+          @managers

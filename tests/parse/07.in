@@ -1,0 +1,7 @@
+repo foo baz
+    RW+                     =   alice @teamleads
+    -   master              =   dilbert @devteam
+    -   refs/tags/v[0-9]    =   dilbert @devteam
+    RW+D dev/                =   dilbert @devteam
+    RW                      =   dilbert @devteam
+    R                       =   @managers

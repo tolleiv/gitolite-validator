@@ -1,0 +1,4 @@
+repo @all
+    C       =   @devs
+    RW+     =   @users
+    config gitweb.url = git@git.example.org:%GL_REPO

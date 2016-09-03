@@ -1,0 +1,13 @@
+# managers should be able to read any repo
+repo @all
+    R                       =   @managers
+
+# ...other rules for other repos...
+
+repo foo bar
+    RW+                     =   alice @teamleads
+    -   master              =   dilbert @devteam
+    -   refs/tags/v[0-9]    =   dilbert @devteam
+    RW+ dev/                =   dilbert @devteam
+    RW                      =   dilbert @devteam
+    R                       =   @managers

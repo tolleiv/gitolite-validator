@@ -1,0 +1,7 @@
+repo foo bar
+
+    RW+C                     =   alice @teamleads
+
+repo foo bahar
+    # a comment
+    RW+                     =   alice @teamleads

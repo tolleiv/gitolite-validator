@@ -1,0 +1,6 @@
+root:
+  group:
+    name: groupname
+    members:
+      hans.maulwurf
+      homer.simpson

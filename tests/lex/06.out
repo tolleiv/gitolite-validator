@@ -1,0 +1,27 @@
+{t_string repo}
+{t_string libraries/external/external_module}
+{t_eol }
+{t_comment -   master = @user}
+{t_eol }
+{t_dash }
+{t_string master}
+{t_assign }
+{t_group user}
+{t_eol }
+{t_dash }
+{t_string TYPO3}
+{t_assign }
+{t_group user}
+{t_eol }
+{t_dash }
+{t_string refs/tags/TYPO3}
+{t_assign }
+{t_group user}
+{t_eol }
+{t_string C}
+{t_assign }
+{t_group devs}
+{t_eol }
+{t_string RW+D}
+{t_assign }
+{t_string CREATOR}

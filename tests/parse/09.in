@@ -1,0 +1,12 @@
+# sample conf/gitolite.conf file
+
+@staff              =   dilbert alice           # groups
+@projects           =   foo bar
+
+repo @projects baz                              # repos
+    RW+             =   @staff                  # rules
+    -       master  =   ashok                   # with
+    RW              =   ashok                   # comments and comments
+    R               =   wally
+    option deny-rules           =   1           # options
+    config hooks.emailprefix    = '[%GL_REPO] ' # git-config

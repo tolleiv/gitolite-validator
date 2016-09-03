@@ -1,0 +1,37 @@
+root:
+  group:
+    name: staff
+    members:
+      dilbert
+      alice
+  group:
+    name: projects
+    members:
+      foo
+      bar
+  repo:
+    paths:
+      @projects
+      baz
+    rules:
+      rule:
+        permission: RW+
+        members:
+          @staff
+      rule:
+        permission: -
+        refex: master
+        members:
+          ashok
+      rule:
+        permission: RW
+        members:
+          ashok
+      rule:
+        permission: R
+        members:
+          wally
+    configs:
+        hooks.emailprefix = '[%GL_REPO]'
+    options:
+        deny-rules = 1

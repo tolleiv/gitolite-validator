@@ -1,0 +1,32 @@
+root:
+  group:
+    name: open
+    members:
+      git
+      gitolite
+      foss/..*
+      [...]
+  repo:
+    paths:
+      @all
+    rules:
+      rule:
+        permission: -
+        members:
+          gitweb
+          daemon
+    options:
+        deny-rules = 1
+  repo:
+    paths:
+      @open
+    rules:
+      rule:
+        permission: R
+        members:
+          gitweb
+          daemon
+    configs:
+        hooks.emailprefix = '[%GL_REPO]'
+    options:
+        deny-rules = 0

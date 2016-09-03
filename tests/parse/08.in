@@ -1,0 +1,10 @@
+@open = git gitolite foss/..* [...]
+
+repo @all
+    -   =   gitweb daemon
+    option deny-rules = 1
+
+repo @open
+    R   =   gitweb daemon
+    config hooks.emailprefix    = '[%GL_REPO]'
+    option deny-rules = 0

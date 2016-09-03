@@ -1,0 +1,12 @@
+root:
+  group:
+    name: group1
+    members:
+      hans.maulwurf
+      homer.simpson
+  group:
+    name: group2
+    members:
+      hans.maulwurf
+      homer.simpson
+      bart.simpson

@@ -1,0 +1,13 @@
+root:
+  repo:
+    paths:
+      @all
+    rules:
+      rule:
+        permission: C
+        members:
+          @devs
+      rule:
+        permission: RW+
+        members:
+          @users

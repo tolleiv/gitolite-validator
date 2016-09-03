@@ -1,0 +1,16 @@
+root:
+  repo:
+    paths:
+      @all
+    rules:
+      rule:
+        permission: C
+        members:
+          @devs
+          hans.maulwurf
+      rule:
+        permission: RW+
+        members:
+          @users
+          homer.simpson
+          bart.simpson

@@ -1,0 +1,7 @@
+repo    libraries/external/external_module
+         #-   master = @user
+         -   master = @user
+         -   TYPO3 = @user
+         -   refs/tags/TYPO3 = @user
+         C       =   @devs
+         RW+D    =   CREATOR

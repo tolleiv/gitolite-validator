@@ -1,0 +1,4 @@
+repo project/(a|b|c)/([a-zA-Z0-9_\.\-]+/)*[a-zA-Z0-9_\.\-]+
+    C       =   @devs
+    RW+     =   @users
+    config gitweb.url = git@git.example.org:%GL_REPO

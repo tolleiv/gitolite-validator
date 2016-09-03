@@ -1,0 +1,16 @@
+{t_string repo}
+{t_string project/(a|b|c)/([a-zA-Z0-9_\.\-]+/)*[a-zA-Z0-9_\.\-]+}
+{t_eol }
+{t_string C}
+{t_assign }
+{t_group devs}
+{t_eol }
+{t_string RW+}
+{t_assign }
+{t_group users}
+{t_eol }
+{t_string config}
+{t_string gitweb.url}
+{t_assign }
+{t_string git@git.example.org:%GL_REPO}
+{t_eol }

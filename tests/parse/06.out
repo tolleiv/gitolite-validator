@@ -1,0 +1,28 @@
+root:
+  repo:
+    paths:
+      @allbroken
+    rules:
+      rule:
+        permission: R
+        members:
+          @managers
+  repo:
+    paths:
+      foo
+      bar
+    rules:
+      rule:
+        permission: RW+
+        members:
+          alice
+          @teamleads
+      rule:
+        permission: RW
+        members:
+          dilbert
+          @devteam
+      rule:
+        permission: R
+        members:
+          @managers
