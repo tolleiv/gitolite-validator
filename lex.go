@@ -50,10 +50,11 @@ type stateFn func(*lexer) stateFn
 type token struct {
 	t tokenType
 	s string
+	l int32
 }
 
 func (t token) String() string {
-	return fmt.Sprintf("{%s %s}", t.t, t.s)
+	return fmt.Sprintf("{%s[%d] %s}", t.t, t.l, t.s)
 }
 
 type lexer struct {
@@ -62,6 +63,7 @@ type lexer struct {
 	buf    []rune // running buffer for current lexeme
 	backup []rune
 	err    error
+	line   int32
 }
 
 func lex(r io.Reader) chan token {
@@ -69,6 +71,7 @@ func lex(r io.Reader) chan token {
 		in:     bufio.NewReader(r),
 		out:    make(chan token),
 		backup: make([]rune, 0, 4),
+		line:   1,
 	}
 	go l.lex()
 	return l.out
@@ -111,8 +114,11 @@ func (l *lexer) keep(r rune) {
 }
 
 func (l *lexer) emit(t tokenType) {
-	l.out <- token{t, string(l.buf)}
+	l.out <- token{t, string(l.buf), l.line}
 	l.buf = l.buf[0:0]
+	if t == t_eol {
+		l.line = l.line + 1
+	}
 }
 
 func lexRoot(l *lexer) stateFn {
@@ -154,7 +160,7 @@ func (l *lexer) bufHasSpaces() bool {
 
 func lexErrorf(t string, args ...interface{}) stateFn {
 	return func(l *lexer) stateFn {
-		l.out <- token{t_error, fmt.Sprintf(t, args...)}
+		l.out <- token{t_error, fmt.Sprintf(t, args...), l.line}
 		return nil
 	}
 }

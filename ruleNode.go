@@ -36,7 +36,7 @@ func (n *ruleNode) parseRefex(p *parser) error {
 			return nil
 		default:
 			fmt.Printf("err\n")
-			return fmt.Errorf("parse error 1472910546: unexpected token type %v while parsing repo paths", t.t)
+			return fmt.Errorf("line %d: parse error 1472910546: unexpected token type %v while parsing repo paths",t.l, t.t)
 		}
 	}
 	return nil
@@ -58,7 +58,7 @@ func (n *ruleNode) parse(p *parser) error {
 		case t_eol:
 			return nil
 		default:
-			return fmt.Errorf("parse error 1472910531: unexpected %v token after name, expected = (%s)", t.t, n.permission)
+			return fmt.Errorf("line %d: parse error 1472910531: unexpected %v token after name, expected = (%s)",t.l,  t.t, n.permission)
 		}
 	}
 

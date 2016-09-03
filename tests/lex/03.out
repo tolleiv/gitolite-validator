@@ -1,5 +1,5 @@
-{t_group groupname}
-{t_assign }
-{t_string hans.maulwurf}
-{t_string homer.simpson}
-{t_eol }
+{t_group[1] groupname}
+{t_assign[1] }
+{t_string[1] hans.maulwurf}
+{t_string[1] homer.simpson}
+{t_eol[1] }

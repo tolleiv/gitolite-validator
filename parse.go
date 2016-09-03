@@ -42,7 +42,7 @@ func (p *parser) next() token {
 	SKIP_COMMENTS:
 	t, ok := <-p.input
 	if !ok {
-		return token{t_eof, "eof"}
+		return token{t_eof, "eof", t.l}
 	}
 	if t.t == t_comment {
 		goto SKIP_COMMENTS

@@ -43,7 +43,7 @@ func (n *rootNode) parse(p *parser) error {
 		t := p.next()
 		switch t.t {
 		case t_error:
-			return fmt.Errorf("parse error 1472910533: saw lex error while parsing root node: %v", t)
+			return fmt.Errorf("line %d:parse error 1472910533: saw lex error while parsing root node: %v",t.l, t)
 		case t_eof:
 			return nil
 		case t_eol:
@@ -58,7 +58,7 @@ func (n *rootNode) parse(p *parser) error {
 			} else {
 
 				p.next()
-				return fmt.Errorf("parse error 1472910535: unexpected token type %v while parsing root node (%s)", t.t, t.s)
+				return fmt.Errorf("line %d: parse error 1472910535: unexpected token type %v while parsing root node (%s)", t.l, t.t, t.s)
 			}
 		case t_group:
 			nn := &groupNode{name: t.s}
@@ -67,7 +67,7 @@ func (n *rootNode) parse(p *parser) error {
 			}
 			n.addChild(nn)
 		default:
-			return fmt.Errorf("parse error 1472910534: unexpected token type %v while parsing root node", t.t)
+			return fmt.Errorf("line %d: parse error 1472910534: unexpected token type %v while parsing root node",t.l, t.t)
 		}
 	}
 }

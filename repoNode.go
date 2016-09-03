@@ -57,7 +57,7 @@ func (n *repoNode) parsePaths(p *parser) error {
 		case t_eol:
 			return nil
 		default:
-			return fmt.Errorf("parse error 1472910536: unexpected token type %v while parsing repo paths", t.t)
+			return fmt.Errorf("line %d: parse error 1472910536: unexpected token type %v while parsing repo paths",t.l, t.t)
 		}
 	}
 	return nil
@@ -94,7 +94,7 @@ func (n *repoNode) parse(p *parser) error {
 				}
 				n.addRule(nn)
 			default:
-				return fmt.Errorf("parse error 1472910546: unexpected %v token, expected (%s)", t.t, t.s)
+				return fmt.Errorf("line %d: parse error 1472910546: unexpected %v token, expected (%s)", t.l, t.t, t.s)
 			}
 		} else if t.t == t_dash {
 			nn := &ruleNode{permission: "-"}
@@ -107,7 +107,7 @@ func (n *repoNode) parse(p *parser) error {
 		} else if t.t == t_eol {
 			continue
 		} else {
-			return fmt.Errorf("parse error 1472910537: unexpected %v token, expected", t.t)
+			return fmt.Errorf("line %d: parse error 1472910537: unexpected %v token, expected", t.l, t.t)
 		}
 	}
 	return nil
