@@ -22,13 +22,13 @@ func (n *configNode) parse(p *parser) error {
 
 	tn := p.next()
 	if tn.t != t_string {
-		return fmt.Errorf("parse error 1472910540: unexpected token type %v ", tn.t)
+		return fmt.Errorf("line %d (1472910540): unexpected token type %v ", tn.l, tn.t)
 	}
 	n.name = tn.s
 
 	ta := p.next()
 	if ta.t != t_assign {
-		return fmt.Errorf("parse error 1472910541: unexpected token type %v ", ta.t)
+		return fmt.Errorf("line %d (1472910541): unexpected token type %v ",ta.l, ta.t)
 	}
 
 	for {
@@ -39,7 +39,7 @@ func (n *configNode) parse(p *parser) error {
 		case t_eol:
 			return nil
 		default:
-			return fmt.Errorf("parse error 1472910543: unexpected token type %v with value %s", tv.t, tv.s)
+			return fmt.Errorf("line %d (1472910543): unexpected token type %v with value %s", tv.t, tv.s)
 		}
 	}
 	return nil

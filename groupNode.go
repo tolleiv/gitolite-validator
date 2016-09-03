@@ -28,7 +28,7 @@ func (n *groupNode) addMember(member user) {
 func (n *groupNode) parse(p *parser) error {
 	t := p.next()
 	if t.t != t_assign {
-		return fmt.Errorf("parse error 1472910529: unexpected %v token after name, expected =", t.t)
+		return fmt.Errorf("line %d (1472910529): unexpected %v token after name, expected =",t.l, t.t)
 	}
 
 	for {
@@ -40,7 +40,7 @@ func (n *groupNode) parse(p *parser) error {
 		case t_eol:
 			return nil
 		default:
-			return fmt.Errorf("parse error 1472910528: unexpected %v token after name, expected =", t.t)
+			return fmt.Errorf("line %d (1472910528): unexpected %v token after name, expected =", t.l, t.t)
 		}
 	}
 
