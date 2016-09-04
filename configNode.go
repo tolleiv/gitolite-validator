@@ -49,8 +49,3 @@ func (n *configNode) pretty(w io.Writer, prefix string) error {
 	fmt.Fprintf(w, "%s%s = %s\n", prefix + indent, n.name, n.value)
 	return nil
 }
-
-func (n *configNode) eval(ctx *context) (interface{}, error) {
-	return nil, nil
-}
-

@@ -27,7 +27,6 @@ type node interface {
 	Type() nodeType
 	parse(*parser) error
 	pretty(io.Writer, string) error
-	eval(*context) (interface{}, error)
 }
 
 type user struct {

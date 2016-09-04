@@ -77,8 +77,3 @@ func (n *ruleNode) pretty(w io.Writer, prefix string) error {
 	}
 	return nil
 }
-
-func (n *ruleNode) eval(ctx *context) (interface{}, error) {
-	return nil, nil
-}
-

@@ -56,8 +56,3 @@ func (n *groupNode) pretty(w io.Writer, prefix string) error {
 	}
 	return nil
 }
-
-func (n *groupNode) eval(ctx *context) (interface{}, error) {
-	return nil, nil
-}
-

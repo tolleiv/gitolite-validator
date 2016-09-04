@@ -81,12 +81,3 @@ func (n *rootNode) pretty(w io.Writer, prefix string) error {
 	}
 	return nil
 }
-
-func (n *rootNode) eval(ctx *context) (interface{}, error) {
-	for _, child := range n.children {
-		if _, err := child.eval(ctx); err != nil {
-			return nil, err
-		}
-	}
-	return nil, nil
-}

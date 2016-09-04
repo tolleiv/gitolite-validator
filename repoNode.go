@@ -145,6 +145,3 @@ func (n *repoNode) pretty(w io.Writer, prefix string) error {
 	}
 	return nil
 }
-func (n *repoNode) eval(ctx *context) (interface{}, error) {
-	return nil, nil
-}

@@ -41,7 +41,3 @@ func (n *commentNode) pretty(w io.Writer, prefix string) error {
 	}
 	return nil
 }
-
-func (n *commentNode) eval(ctx *context) (interface{}, error) {
-	return nil, nil
-}
